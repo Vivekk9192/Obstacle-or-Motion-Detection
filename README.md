@@ -1,4 +1,4 @@
-# Obstacle-or-Motion-Detection
+# Obstacle-or-Motion-Detection-IOT
 A IOT based project that motion or obstacle detection using PIR Sensor, Buzzer, Breadboard, NodeMCU ESP8266, Jumper Wires and etc.
 
 •	To implement an IoT-based project for motion detection using a PIR (Passive Infrared) sensor, a buzzer, and NodeMCU ESP8266, we need to understand the components involved and their functionality. Let's explore the theory behind each component:
