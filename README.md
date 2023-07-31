@@ -43,48 +43,6 @@ Testing and Monitoring:
 •	Observe the behavior of the PIR sensor and buzzer when motion is detected. The buzzer should produce sound alerts when motion is detected within the sensor's range.
 •	Monitor the system's performance and make adjustments as needed to optimize sensitivity, detection range, or other parameters.
 •	By understanding the theory and following the above steps, we can implement an IoT-based project for motion detection using a PIR sensor, buzzer, and NodeMCU ESP8266. The PIR sensor detects motion, the NodeMCU ESP8266 processes the sensor data, and the buzzer provides audible alerts, creating a simple but effective motion detection system.
-
-Code:
-int motionSensor = D1;
-int buzzer = D6;
-int led = D7;
-//int LED = D4;  // LED 2
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  pinMode(LED_BUILTIN, OUTPUT);
-  pinMode(buzzer, OUTPUT);
-  pinMode(led, OUTPUT);
-  //pinMode(LED, OUTPUT);  //LED ON
-  digitalWrite(LED_BUILTIN, HIGH);
-  digitalWrite(buzzer,HIGH);
-  digitalWrite(led,HIGH);
-  pinMode(motionSensor, INPUT);
-  delay(1500);
-  Serial.println("Motion sensor test.");
-}
-unsigned long currentTime;
-const unsigned long motionCheckInterval = 150UL;
-unsigned long previousMotionCheckTime = 0;
-void loop() {
-  // put your main code here, to run repeatedly:
-  currentTime = millis();
-  if (currentTime - previousMotionCheckTime >= motionCheckInterval) {
-    int isMotionDetected = digitalRead(motionSensor);
-    if (isMotionDetected == 0) {
-      Serial.println("Motion ended!");
-      digitalWrite(LED_BUILTIN, HIGH);
-      digitalWrite(buzzer,LOW);
-      digitalWrite(led, HIGH);
-    } else {
-      Serial.println("Motion detected!");
-      digitalWrite(LED_BUILTIN, LOW);
-      digitalWrite(buzzer,HIGH);
-      digitalWrite(led, HIGH);
-    }
-    previousMotionCheckTime = currentTime;
-  }
-}
  
 Conclusion:
 •	In conclusion, the motion detection project in IoT successfully demonstrates the capabilities of integrating Internet of Things (IoT) technology with motion sensors to create a responsive and automated system. The project aimed to detect and respond to human movement within a given space, providing real-time alerts or triggering specific actions based on detected motion.
